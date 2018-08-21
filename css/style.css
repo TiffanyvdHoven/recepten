@@ -1,0 +1,181 @@
+/*  algemene styling */
+
+html {
+  width: 90%;
+  margin: auto;
+  line-height: 1.4;
+  font: 13px verdana;
+  line-height: 1.65;
+  color: #666;
+}
+
+article {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.left, .middle, .right{
+  flex: auto;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 84px;
+  padding: 15px 0;
+}
+
+.foto {
+  width: 100%;
+}
+
+/* recepten pagina styling */
+
+.receptflex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidenav {
+  display: none;
+}
+
+/*  lettertypes en styling */
+h1 {
+  font: 1.615em "Helvetica Neue";
+  color: #F6BFD9;
+}
+
+.home {
+  background-color: #F6BFD9;
+  font: bold 18px verdana;
+  text-align: center;
+  color: white;
+  padding: 8px;
+}
+
+h3 {
+  font: 18px verdana;
+  color: #F6BFD9;
+}
+
+/* links en hovers */
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+nav a {
+  color: #F4AFCF;
+}
+
+/* lijsten en lijstitems */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* navigatie menu en recepten menu */
+
+nav ul {
+  display: block;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+/* radio box verwijderen*/
+
+input[type="radio"]{
+	display:none;
+}
+
+/* recepten pagina tabs */
+
+.tabp{
+	display:none;
+  width: 100%;
+}
+
+#toggle-tab1p:checked ~ #tab1p,#toggle-tab2p:checked ~ #tab2p,#toggle-tab3p:checked ~ #tab3p{
+  display:block;
+}
+
+.pagina {
+  text-decoration: underline;
+  margin-right: 2em;
+  margin-top: 2em;
+  display: inline-block;
+}
+
+/*  Media Queries  */
+
+@media (min-width: 769px) {
+
+html {
+  width: 80%;
+  max-width: 1300px;
+}
+  nav li {
+  font: 24px verdana;
+}
+
+  nav a {
+    font-size: 24px;
+  }
+
+  nav {
+    border-top: solid 0.75px #DBDBDB;
+  }
+
+  .left, .middle, .right{
+    flex: auto;
+    padding: 10px;
+    width: 26%;
+  }
+
+  .intro {
+    display: none;
+  }
+}
+
+@media (min-width: 1173px) {
+  .article,
+  .sidenav {
+    flex: auto;
+    padding: 50px;
+  }
+
+  .article {
+    flex: 4;
+  }
+
+  .sidenav {
+    display: inline;
+    flex: 1;
+    margin-left: -10em;
+  }
+
+}
+
+/*  mobiel arcodeon */
+
+@media (max-width: 769px) {
+
+article {
+    flex-direction: column;
+}
+
+.tab{
+	display:none;
+}
+
+#toggle-tab1:checked ~ #tab1,#toggle-tab2:checked ~ #tab2,#toggle-tab3:checked ~ #tab3{
+  display:block;
+}
+}
