@@ -9,7 +9,7 @@ html {
   color: #666;
 }
 
-article {
+.articlehome {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -89,28 +89,14 @@ nav li {
   margin-right: 2em;
 }
 
+.center {
+  text-align: center;
+}
+
 /* radio box verwijderen*/
 
 input[type="radio"]{
 	display:none;
-}
-
-/* recepten pagina tabs */
-
-.tabp{
-	display:none;
-  width: 100%;
-}
-
-#toggle-tab1p:checked ~ #tab1p,#toggle-tab2p:checked ~ #tab2p,#toggle-tab3p:checked ~ #tab3p{
-  display:block;
-}
-
-.pagina {
-  text-decoration: underline;
-  margin-right: 2em;
-  margin-top: 2em;
-  display: inline-block;
 }
 
 /*  Media Queries  */
@@ -140,34 +126,42 @@ html {
   }
 
   .intro {
-    display: none;
+    display:none;
   }
+
+  .receptflex{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px;
+  }
+
+  .ingredienten {
+    grid-column: span 2;
+  }
+
+  .bereiding {
+    grid-column: span 2;
+  }
+
 }
 
-@media (min-width: 1173px) {
-  .article,
-  .sidenav {
-    flex: auto;
-    padding: 50px;
+@media (min-width: 1300px) {
+  .receptmain {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
   }
 
-  .article {
-    flex: 4;
+  .receptmain > * {
+    grid-column: 2;
+    min-width: 0;
   }
-
-  .sidenav {
-    display: inline;
-    flex: 1;
-    margin-left: -10em;
-  }
-
 }
 
 /*  mobiel arcodeon */
 
 @media (max-width: 769px) {
 
-article {
+.articlehome {
     flex-direction: column;
 }
 
